@@ -4,11 +4,14 @@ project_dir = /climatic_data_center
 public_include = $(project_dir)/public
 pubcpp = $(public_include)/_public.cpp
 
-CC = g++
+CC = g++ 
 CFLAGS = -g -std=c++11
 
-all: crtsurfdata1
+all: crtsurfdata
 
-crtsurfdata1: crtsurfdata1.cpp
-	$(CC) $(CFLAGS) -o crtsurfdata1 crtsurfdata1.cpp -I$(public_include) $(pubcpp)
-	@mv crtsurfdata1 bin/
+crtsurfdata: crtsurfdata.cpp
+	$(CC) $(CFLAGS) -o crtsurfdata crtsurfdata.cpp -I$(public_include) $(pubcpp)
+	@mv crtsurfdata bin/
+
+clean:
+	rm bin/* -f

@@ -34,3 +34,6 @@
 # clion
 .idea
 bin
+
+# vscode
+.vscode
